@@ -13,8 +13,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+ScalaCompileOptions.metaClass.daemonServer = true
+ScalaCompileOptions.metaClass.fork = true
+ScalaCompileOptions.metaClass.useAnt = false
+ScalaCompileOptions.metaClass.useCompileDaemon = false
+
 buildscript {
   repositories {
+    maven { name "Alibaba" ; url "https://maven.aliyun.com/repository/public" }
     mavenCentral()
   }
   apply from: file('gradle/buildscript.gradle'), to: buildscript
